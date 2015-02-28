@@ -383,7 +383,6 @@ class GameMaster extends Deadwood {
 	  return totalScore;
   }
   
-// Make the cards distribute randomly
   public Card getRandomCard() {
 	  Random c = new Random();
 	  int index = c.nextInt(cards.size());
