@@ -95,7 +95,7 @@ class GameMaster extends Deadwood {
   private int numPlayer;
   private int rank;
   private String[] names = {"blue" , "red", "yellow", "black", "white", "cyan", "pink", "magenta"};
-  private int dayCount = 2;
+  private int dayCount = 0;
   private int maxDays;
   private int cardCount;
   private int totalScore;
