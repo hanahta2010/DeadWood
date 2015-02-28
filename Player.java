@@ -73,9 +73,9 @@ public class Player {
 // upgrading with their credit	
 	public boolean upgradeWithCredit(int rank) {
 		if (rank > this.rank && rank <= 6) {
-			if (money >= (5*(rank - 1))) {
+			if (credit >= (5*(rank - 1))) {
 				this.rank = rank;
-				money -= 5 * (rank - 1);
+				credit -= 5 * (rank - 1);
 				return true;
 			}
 		}
