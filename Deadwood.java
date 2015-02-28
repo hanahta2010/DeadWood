@@ -76,7 +76,8 @@ public abstract class Deadwood {
         break;
 
       default:
-        System.out.println("Unknown command \""+cmd+"\"");        
+        System.out.println("Unknown command \""+cmd+"\"");   
+        System.out.println();
       }
       
     }
