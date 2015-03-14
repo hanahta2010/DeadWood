@@ -175,7 +175,7 @@ public class Controller {
 			winnerName = dead.maxPlayer.name;
 		}
 		
-		Results newresults = new Results(0, comment, dead.getDay(), 0, winnerName);	
+		Results newresults = new Results(0, comment, dead.dayCount + 1, 0, winnerName);	
 		dv.stats.sub3 = newresults;
 		dv.stats.repaint();		
 		dv.stats.add(dv.stats.sub3);

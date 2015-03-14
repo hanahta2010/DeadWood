@@ -94,7 +94,8 @@ return this.rooms;
    public ArrayList<Card> cards() {
 	return cards;
     }
-  // Trigger when the game is over 
+   
+// Trigger when the game is over 
   public boolean gameOver() {
 	  int countTemp = 0;
 	  for ( Map.Entry<String, Room> entry : rooms.entrySet()) {
