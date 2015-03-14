@@ -153,6 +153,19 @@ public class Stats extends JPanel{
 		sub3 = new Results(0, "Welcome to Deadwood. Ready to act?", 1, 0);
 		sub3.setBounds(0,600,400,300);		
 		sub3.setBackground(new Color(213,226,240));
+		JLabel dats = new JLabel("------------------------------------------------------------------------");
+		dats.setBounds(10, 120, 400, 10);
+		JLabel information = new JLabel("NOTE: ");
+		information.setBounds(0, 150, 400, 30);
+		JLabel comment1 = new JLabel("Click on the Arrow to move");
+		comment1.setBounds(10,180,400,30);	
+		JLabel comment2 = new JLabel("Please end your turn with \"End\" button.");
+		comment2.setBounds(10, 210, 400, 30);
+		
+		sub3.add(dats);
+		sub3.add(information);
+		sub3.add(comment1);
+		sub3.add(comment2);
 //-----------------------------------------------------------------------		
 		
 		this.add(sub1);
