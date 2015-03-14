@@ -2,7 +2,7 @@ Deadview Documentation
 
 Aaron Tuor
 Hang Ta
-CS247 Winter 2005
+CS 345 - MVC Write up
 
 Deadview.java
 	container for the Boardview and Stats gui components;
