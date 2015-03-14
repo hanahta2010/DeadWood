@@ -1,0 +1,171 @@
+import java.awt.event.*;
+import javax.swing.*;
+import javax.imageio.*;
+import java.io.*;
+import java.awt.image.*;
+import java.util.*;
+import java.awt.Point;
+public class Controller {
+	
+	
+	
+	
+	
+//fields--------------------------------------------------------------------	
+	static public Deadwood dead;
+	
+	
+//-------------------------------------------------------------------------
+	
+	
+	
+	static public void move (String location){
+		move(dead, location);
+	}
+	
+	
+	static public void move(Deadwood dead, String location){
+		if(dead.move(location)) {
+			RoomView room = Boardview.rooms.get(location);			
+			Boardview.currentPlayer.setBounds(room.playerPosition[0],room.playerPosition[1],room.playerPosition[2],room.playerPosition[3]);		
+			room.nextPlayPosition();
+			Boardview.newPlayer();		
+		}
+	}
+
+	static public void takeRole(Roleview role, String location, String part, String scene){
+		if(true) {
+			if (scene.equals("none")){			
+				RoomView room = Boardview.rooms.get(location);			
+				Roleview p = room.roles.get(part);			
+				Point z = p.getLocation();			
+				Boardview.currentPlayer.setBounds((int)z.getX() + role.xdisplacement ,(int)z.getY() + role.ydisplacement,46,46);
+				Boardview.newPlayer();
+			} else {
+				Point q = role.getLocation();
+				Boardview.currentPlayer.setBounds((int)q.getX()+ role.xdisplacement,(int)q.getY()+ role.ydisplacement,46,46);
+				Boardview.newPlayer();
+			}
+		}
+
+	}
+	static public void takecardRole(JLabel role, String scene, String set) {
+		if(true/*ask Deadwood*/){
+			Point q = role.getLocation();
+			Boardview.currentPlayer.setBounds((int)q.getX(),(int)q.getY(),46,46);			
+			Boardview.newPlayer();	
+		}
+	}	
+
+	static public void rehearse(String player) {
+		if(true/*ask Deadwood*/) {//tell stats
+		}
+	}
+
+	static public void upGrade(String currency, String rank) {
+		if(true/*ask Deadwood*/) {//tell stats
+		}
+	}
+
+	static public void act() {
+		if (true/*ask Deadwood*/) {//tell stats
+			
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	 public static void main(String[] args)
+	  {
+	    Controller control = new Controller();
+		
+	    dead = Deadwood.build(Integer.parseInt(args[0]));
+	    Scanner in = new Scanner(System.in);
+	    try {
+	        Deadview dv = new Deadview();
+	      } catch (IOException e) {
+	        e.printStackTrace();
+	      }
+	    while(!dead.gameOver() && in.hasNext()) {
+
+	      String cmd = in.next();
+	      switch(cmd) {
+	      case "who": 
+	        dead.who(); 
+	        break;
+	        
+	      case "where":
+	        dead.where();
+	        break;
+
+	      case "move": 
+	        dead.move(in.nextLine().trim());
+	        break;
+
+	      case "work":
+	        dead.work(in.nextLine().trim());
+	        break;
+
+	      case "upgrade":
+	        String currency = in.next().trim();
+	        int rank = in.nextInt();
+	        switch(currency) {
+	        case "$":
+	          dead.upgradeDollars(rank);
+	          break;
+	        case "cr":
+	          dead.upgradeCredit(rank);
+	          break;
+	        default:
+	          System.out.println("Unknown currency \"" + currency +"\"");
+	        }
+	        break;
+
+	      case "rehearse":
+	        dead.rehearse();
+	        break;
+	        
+	      case "act":
+	    	dead.act();
+	    	break;
+	    	
+	      case "end":
+	        dead.end();
+	        break;
+
+	      default:
+	        System.out.println("Unknown command \""+cmd+"\"");   
+	        System.out.println();
+	      }
+	      
+	    }
+	    
+	  }
+	
+
+	
+	
+	
+	
+	
+//---------------------------------------------------------------------------------------	
+}
+	
