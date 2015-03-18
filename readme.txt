@@ -60,11 +60,26 @@ MoveButtons.java
 UpgradeButtons.java
 	parses upGrade.xml file to create an array of UgradeButtons.UButton(extended JLabel used as button
 	for upgrading);
-
-Controller.java
-	methods: move, takeRole, rehearse, upGrade, act
-
+Status.java
+	extended JPanel use to display the Player's status. 
 	
+Results: 
+	extended JPanel use to display the day, some notes, and display the winner.
+	
+Controller.java
+	contains all actions for players and the board
+		methods: 
+			move(): take care of player's move
+			takeRole(): let the player's take a role
+			rehearse(): to rehearse when they are in a role
+			upGrade(): with money or credit to have higher's rank 
+			act(): let the player act when they are in a role
+			endGame(): end of the game's trigger
+			endDay(): reset the board when the day's end
+			end(): end the player's turn
+			refreshStats(): refresh the player's status on their rank and money
+			refreshResults(): to change the line, day, and winner when necessary. 
+			main(): run the controller
 
 
 
